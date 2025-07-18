@@ -1,0 +1,45 @@
+# Main executable target
+executable("websocket_client") {
+  configs = default_configs
+  configs += [ "//build/config:executable_config" ]
+  sources = [
+    "src/main.cpp",
+    "src/websocket_client.cpp",
+    "src/websocket_client_plain.cpp",
+    "src/cli_handler.cpp",
+    "src/message_handler.cpp",
+  ]
+
+  include_dirs = [
+    "/usr/include",
+    "/usr/include/CLI11",
+  ]
+}
+
+# Test target
+executable("websocket_client_test") {
+  testonly = true
+  sources = [
+    # Test files
+    "test/websocket_client_test.cpp",
+    "test/websocket_client_plain_test.cpp",
+    "test/cli_handler_test.cpp",
+    "test/message_handler_test.cpp",
+    # Implementation files needed for testing
+    "src/websocket_client.cpp",
+    "src/websocket_client_plain.cpp",
+    "src/cli_handler.cpp",
+    "src/message_handler.cpp",
+  ]
+
+  configs = default_configs
+  configs += [ "//build/config:executable_config" ]
+  
+  include_dirs = [
+    "/usr/include",
+    "/usr/include/CLI11",
+    "/usr/include/gtest",
+  ]
+  
+  libs = [ "gtest", "gtest_main" ]
+}

@@ -1,0 +1,23 @@
+# DEPS file for third-party dependencies
+
+vars = {
+  'boost_revision': '1.82.0',
+  'openssl_revision': '3.1.1',
+  'cli11_revision': 'v2.3.2',
+  'gtest_revision': 'release-1.12.1',
+}
+
+deps = {
+  'third_party/boost': {
+    'url': 'https://github.com/boostorg/boost.git@' + Var('boost_revision'),
+  },
+  'third_party/openssl': {
+    'url': 'https://github.com/openssl/openssl.git@' + Var('openssl_revision'),
+  },
+  'third_party/cli11': {
+    'url': 'https://github.com/CLIUtils/CLI11.git@' + Var('cli11_revision'),
+  },
+  'third_party/gtest': {
+    'url': 'https://github.com/google/googletest.git@' + Var('gtest_revision'),
+  },
+}

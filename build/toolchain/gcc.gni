@@ -1,0 +1,42 @@
+# Toolchain configuration for GCC
+
+toolchain("gcc") {
+  tool("cc") {
+    depfile = "{{output}}.d"
+    command = "gcc -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    outputs = [
+      "{{source_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
+    ]
+    description = "CC {{output}}"
+  }
+
+  tool("cxx") {
+    depfile = "{{output}}.d"
+    command = "g++ -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    outputs = [
+      "{{source_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
+    ]
+    description = "CXX {{output}}"
+  }
+
+  tool("link") {
+    outfile = "{{target_output_name}}{{output_extension}}"
+    rspfile = "$outfile.rsp"
+    command = "g++ {{ldflags}} -o $outfile @$rspfile"
+    outputs = [ outfile ]
+    rspfile_content = "{{inputs}} {{solibs}} {{libs}}"
+    description = "LINK $outfile"
+  }
+
+  tool("stamp") {
+    command = "touch {{output}}"
+    description = "STAMP {{output}}"
+  }
+
+  tool("copy") {
+    command = "cp -af {{source}} {{output}}"
+    description = "COPY {{source}} {{output}}"
+  }
+}

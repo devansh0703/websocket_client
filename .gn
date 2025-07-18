@@ -1,0 +1,19 @@
+buildconfig = "//build/config/BUILDCONFIG.gn"
+
+default_args = {
+  # Default build settings
+  is_debug = true
+  is_clang = false  # Default to GCC, can be overridden
+  use_custom_libcxx = false
+  
+  # Build flags
+  treat_warnings_as_errors = true
+  enable_testing = true
+  
+  # Library configurations
+  use_system_boost = true
+  use_system_openssl = true
+}
+
+# Secondary source root for build configuration
+secondary_source = "//build"

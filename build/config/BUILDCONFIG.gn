@@ -1,0 +1,23 @@
+# Basic build configuration
+if (target_os == "") {
+  target_os = "linux"
+}
+if (target_cpu == "") {
+  target_cpu = "x64"
+}
+
+# Declare basic build arguments
+declare_args() {
+  is_debug = true
+  is_clang = false
+}
+
+# Set default toolchain based on is_clang
+if (is_clang) {
+  set_default_toolchain("//build/toolchain:clang")
+} else {
+  set_default_toolchain("//build/toolchain:gcc")
+}
+
+# Set default configs that apply to all targets
+default_configs = [ "//build/config:base" ]
