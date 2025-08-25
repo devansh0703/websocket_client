@@ -78,14 +78,3 @@ ninja -C out/Release
 - Tests are in the `test/` directory
 - Build configuration is in `build/` directory
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run the tests
-5. Submit a pull request
-
-## License
-
-MIT License

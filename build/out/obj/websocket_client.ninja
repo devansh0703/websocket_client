@@ -1,0 +1,29 @@
+defines =
+include_dirs = -I/usr/include -I/usr/include/CLI11 -I../../src
+cflags = -Wall -Wextra -std=c++17 -g
+cflags_cc =
+target_output_name = websocket_client
+
+build obj/src/websocket_client.main.o: cxx ../../src/main.cpp
+  source_file_part = main.cpp
+  source_name_part = main
+build obj/src/websocket_client.websocket_client.o: cxx ../../src/websocket_client.cpp
+  source_file_part = websocket_client.cpp
+  source_name_part = websocket_client
+build obj/src/websocket_client.websocket_client_plain.o: cxx ../../src/websocket_client_plain.cpp
+  source_file_part = websocket_client_plain.cpp
+  source_name_part = websocket_client_plain
+build obj/src/websocket_client.cli_handler.o: cxx ../../src/cli_handler.cpp
+  source_file_part = cli_handler.cpp
+  source_name_part = cli_handler
+build obj/src/websocket_client.message_handler.o: cxx ../../src/message_handler.cpp
+  source_file_part = message_handler.cpp
+  source_name_part = message_handler
+
+build websocket_client: link obj/src/websocket_client.main.o obj/src/websocket_client.websocket_client.o obj/src/websocket_client.websocket_client_plain.o obj/src/websocket_client.cli_handler.o obj/src/websocket_client.message_handler.o
+  ldflags =
+  libs = -lpthread -lssl -lcrypto -lboost_system
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = 

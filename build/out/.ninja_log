@@ -1,0 +1,22 @@
+# ninja log v5
+1	17315	1756086120066660985	obj/src/websocket_client.main.o	8e6a966ba9f5c13c
+17315	26130	1756086128879661428	obj/src/websocket_client.cli_handler.o	6701536a7ff0f0cd
+26130	27234	1756086129998661485	obj/src/websocket_client.message_handler.o	d74dd79e2029e0e7
+3	32057	1756086134757661725	obj/src/websocket_client.websocket_client_plain.o	598c9ba6c110aea4
+2	48458	1756086151110662548	obj/src/websocket_client.websocket_client.o	2a67207cad7ea2f2
+1	5001	1756086224464666243	websocket_client	78b65fc791cce85
+1	9270	1756086228763666459	obj/test/websocket_client_test.websocket_client_test.o	4002fc940f70a667
+2	9755	1756086229245666483	obj/test/websocket_client_test.websocket_client_plain_test.o	92cdbc879e0026f8
+9270	11274	1756086230775666560	obj/test/websocket_client_test.message_handler_test.o	86a16eee77d95b66
+5001	13363	1756086232848666665	obj/test/websocket_client_test.cli_handler_test.o	6c08db7484d871e9
+13364	23329	1756086242818667167	obj/src/websocket_client_test.cli_handler.o	60940f590ef43a75
+23329	24234	1756086243731667213	obj/src/websocket_client_test.message_handler.o	6e149ced237b1cf7
+11275	37954	1756086257392667901	obj/src/websocket_client_test.websocket_client_plain.o	334fadd6c41150b1
+9755	51905	1756086271292668601	obj/src/websocket_client_test.websocket_client.o	79a67af73de09447
+51905	53549	1756086273034668689	websocket_client_test	99330f88ce30c872
+0	3541	1756086684329689403	obj/test/websocket_client_test.websocket_client_plain_test.o	92cdbc879e0026f8
+3541	5120	1756086685896689482	websocket_client_test	99330f88ce30c872
+0	3596	1756086873661698939	obj/test/websocket_client_test.websocket_client_plain_test.o	92cdbc879e0026f8
+3596	5135	1756086875187699016	websocket_client_test	99330f88ce30c872
+1	3650	1756087058813708264	obj/test/websocket_client_test.websocket_client_plain_test.o	92cdbc879e0026f8
+3650	5199	1756087060350708342	websocket_client_test	99330f88ce30c872
